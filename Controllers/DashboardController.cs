@@ -6,16 +6,16 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using UserDashboard.Models;
+using SharpSeaUsers.Models;
 
-namespace UserDashboard.Controllers
+namespace SharpSeaUsers.Controllers
 {
     public class DashboardController : Controller
     {
-        private UserDashboardContext _context;
+        private SharpSeaUsersContext _context;
         // private PasswordHasher<User> _hasher;
 
-        public DashboardController(UserDashboardContext context)
+        public DashboardController(SharpSeaUsersContext context)
         {
             _context = context;
         }

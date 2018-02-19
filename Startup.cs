@@ -8,9 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MySQL.Data.EntityFrameworkCore.Extensions;
-using UserDashboard.Models;
+using SharpSeaUsers.Models;
 
-namespace UserDashboard
+namespace SharpSeaUsers
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace UserDashboard
             // Add framework services.
             services.AddSession();
             services.AddMvc();
-            services.AddDbContext<UserDashboardContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
+            services.AddDbContext<SharpSeaUsersContext>(options => options.UseMySQL(Configuration["DBInfo:ConnectionString"]));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

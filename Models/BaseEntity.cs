@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel;
 
-namespace UserDashboard.Models
+namespace SharpSeaUsers.Models
 {
     public abstract class BaseEntity{
         

@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace UserDashboard.Models
+namespace SharpSeaUsers.Models
 {
-    public class UserDashboardContext : DbContext
+    public class SharpSeaUsersContext : DbContext
     {
-        public UserDashboardContext(DbContextOptions<UserDashboardContext> options) : base (options){}
+        public SharpSeaUsersContext(DbContextOptions<SharpSeaUsersContext> options) : base (options){}
 
         public DbSet<User> users { get; set; }
         public DbSet<Conversation> conversations { get; set; }

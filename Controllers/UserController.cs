@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using UserDashboard.Models;
+using SharpSeaUsers.Models;
 
-namespace UserDashboard.Controllers
+namespace SharpSeaUsers.Controllers
 {
     public class UserController : Controller
     {
-        private UserDashboardContext _context;
+        private SharpSeaUsersContext _context;
         private PasswordHasher<User> _hasher;
 
-        public UserController(UserDashboardContext context)
+        public UserController(SharpSeaUsersContext context)
         {
             _context = context;
             _hasher = new PasswordHasher<User>();
