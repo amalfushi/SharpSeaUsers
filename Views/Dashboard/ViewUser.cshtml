@@ -1,0 +1,34 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@Html.Partial("../Partials/LoggedNavBar")
+
+@using UserDashboard.Models
+
+
+<h3>@Model.FirstName @Model.LastName</h3>
+<div class="form horiz">
+    <label>Registered At:</label>
+    <p>@Model.CreatedAt</p>
+</div>
+
+<div class="form horiz">
+    <label>User ID:</label>
+    <p>#@Model.UserId</p>
+</div>
+
+<div class="form horiz">
+    <label>Email Address:</label>
+    <p>@Model.Email</p>
+</div>
+
+@if (@Model.Description != null){
+    <div class="form horiz">
+    <label>Description:</label>
+    <p>@Model.Description</p>
+</div>
+}
+
+@Html.Partial("../Partials/NewConversation")
+
+@Html.Partial("../Partials/Conversations")

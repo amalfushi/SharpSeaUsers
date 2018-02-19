@@ -1,0 +1,9 @@
+@using UserDashboard.Models
+
+<form method="POST" action="/newConversation" >
+    <label>Leave a message for @Model.FirstName</label><br>
+    <input type="hidden" id="recipient" name="recipient" value=@Model.UserId>
+    <textarea cols="50" rows="5" placeholder="5 characters minimum" id="message" name="message" placeholder="10 minlength="10" characters minimum..."></textarea><br>
+
+    <input class="btn btn-primary" type="submit" value="Post">
+</form>

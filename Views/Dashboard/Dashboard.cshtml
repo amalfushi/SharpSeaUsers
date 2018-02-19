@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+@Html.Partial("../Partials/LoggedNavBar")
+
+@using UserDashboard.Models
+
+@if(@ViewBag.Admin == true){ 
+    <h1>Welcome to Admin Dashboard, @ViewBag.LoggedUserName</h1>
+} else {
+    <h1>Welcome to User Dashboard, @ViewBag.LoggedUserName</h1>
+}
+
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>User Level</th>
+        @if(@ViewBag.Admin == true){
+            <th>Actions</th>
+        }
+    </thead>
+    @foreach(var u in Model){
+        <tr>
+            <td>@u.UserId</td>
+            <td><a href="/user/@u.UserId">@u.FirstName @u.LastName</a></td>
+            <td>@u.Email</td>
+            <td>@u.CreatedAt</td>
+            @if(@u.UserLevel == 9){
+                <td>Admin</td>
+                
+            } else {
+                <td>Normal</td>
+            }
+            @if(@ViewBag.Admin == true){
+                <td>
+                    <ul class="inTable">
+                        <li><a href="/edit/@u.UserId">edit</a></li>
+                        <li><a href="/delete/@u.UserId" method="delete">remove</a></li>
+                    </ul>
+                </td>
+            }
+        </tr>
+    }
+</table>

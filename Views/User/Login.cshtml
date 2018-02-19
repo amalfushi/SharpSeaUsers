@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Login";
+}
+@Html.Partial("../Partials/UnloggedNavBar")
+
+@model UserDashboard.Models.LoginUser
+
+<h1>Login</h1>
+
+
+<form asp-controller="User" asp-action="Validatelogin" method="POST">
+    <div class="form horiz">
+        <label asp-for="LogEmail"></label>
+        <input asp-for="LogEmail">
+    </div>
+    <span class="error right" asp-validation-for="LogEmail"></span><br>
+
+    <div class="form horiz">
+        <label asp-for="LogPassword"></label>
+        <input asp-for="LogPassword">
+    </div>
+    <span class="error right" asp-validation-for="LogPassword"></span><br>
+    @if(ViewBag.InvalidLogin == true){
+        <span class="error right">Invalid Email or Password.</span><br>
+    }
+
+    <input class="btn btn-primary" type="submit" value="Login">
+</form>
+
+<a href="/register">Don't have an account? Register here.</a>

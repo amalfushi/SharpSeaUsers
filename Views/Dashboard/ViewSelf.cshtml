@@ -1,0 +1,38 @@
+@{
+    ViewData["Title"] = "Edit User";
+}
+@Html.Partial("../Partials/LoggedNavBar")
+
+@model UserDashboard.Models.User
+
+<h3>Edit User #@Model.UserId</h3>
+
+<form asp-controller="user" asp-action="SaveUserChanges" asp-method>
+    <div class="form horiz">
+        <label asp-for="Email"></label>
+        <input asp-for="Email">
+    </div>
+    <span asp-validation-for="Email"></span><br>
+
+    <div class="form horiz">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName">
+    </div>
+    <span asp-validation-for="FirstName"></span><br>
+
+    <div class="form horiz">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName">
+    </div>
+    <span asp-validation-for="LastName"></span><br>
+
+    <div class="form horiz">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" id="" cols="50" rows="5"></textarea>
+    </div>
+    <span asp-validation-for="UserLevel"></span><br>
+
+    <input type="submit" value="Save Changes" class="btn btn-primary">
+</form>
+
+@Html.Partial("../Partials/Conversations")

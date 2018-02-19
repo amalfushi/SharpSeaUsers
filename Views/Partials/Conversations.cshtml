@@ -1,0 +1,17 @@
+@using UserDashboard.Models
+
+@foreach (Conversation conv in Model.Conversations){
+    <div class="conversation">
+        @foreach (Message mes in conv.Messages){
+            <div class="message">
+                <p>@mes.Text</p>
+            </div>
+        }
+        <form method="POST" action="/newMessage">
+            <label>Reply:</label>
+            <input type="hidden" name="convId" id="convId" value=@conv.ConversationId>
+            <textarea name="text" id="text" cols="30" rows="10" minlength="10"></textarea>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+}
